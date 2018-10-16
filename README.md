@@ -1,6 +1,6 @@
 # think-qrcode
 The ThinkPHP5 query-express
-二维码生成 SDK
+快递查询 SDK
 ## 安装
 
 ### 一、执行命令安装
