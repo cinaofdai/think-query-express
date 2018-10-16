@@ -1,4 +1,4 @@
-# think-qrcode
+# think-query-express
 The ThinkPHP5 query-express
 快递查询 SDK
 ## 安装
@@ -22,7 +22,7 @@ composer require dh2y/think-query-express
 ```
    a) 进入vendor/dh2y目录 (没有dh2y目录 mkdir dh2y)
    b) git clone 
-   c) 修改 git clone下来的项目名称为think-qrcode
+   c) 修改 git clone下来的项目名称为think-query-express
    d) 添加下面配置
    "autoload": {
         "psr-4": {
