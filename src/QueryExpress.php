@@ -115,7 +115,7 @@ class QueryExpress
     public function getType($num)
     {
         $request = $this->type_url . $num;
-        $result = file_get_contents($request);
+        $result = CurlRequest::get($request);
         $result = json_decode($result, JSON_OBJECT_AS_ARRAY);
 
         $return = [];
@@ -134,7 +134,7 @@ class QueryExpress
      */
     public function getComCode($num){
         $request = $this->type_url . $num;
-        $result = file_get_contents($request);
+        $result = CurlRequest::get($request);
         $result = json_decode($result, JSON_OBJECT_AS_ARRAY);
 
         $comCode = '';
@@ -152,7 +152,7 @@ class QueryExpress
     public function details($num){
         $type = $this->getComCode($num);
         $request = $this->query_url ."type=$type&postid=$num";
-        $result = file_get_contents($request);
+        $result = CurlRequest::get($request);
         $result = json_decode($result, JSON_OBJECT_AS_ARRAY);
 
         $detail = [];
@@ -188,7 +188,7 @@ class QueryExpress
     public function getState($num){
         $type = $this->getComCode($num);
         $request = $this->query_url ."type=$type&postid=$num";
-        $result = file_get_contents($request);
+        $result = CurlRequest::get($request);
         $result = json_decode($result, JSON_OBJECT_AS_ARRAY);
 
         $status =['state'=>null,'ret'=>''];
@@ -206,5 +206,8 @@ class QueryExpress
 
         return $status;
     }
+
+
+
 
 }
