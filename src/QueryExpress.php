@@ -209,6 +209,24 @@ class QueryExpress
     }
 
 
+    /**
+     * 查询快递单号是否合法
+     * @param string $num 快递单
+     * @return bool
+     */
+    public function checkNum($num){
+        $type = $this->getComCode($num);
+        $request = $this->query_url ."type=$type&postid=$num";
+        $result = CurlRequest::get($request);
+        $result = json_decode($result, JSON_OBJECT_AS_ARRAY);
+
+        if($result['status']==200){
+           return true;
+        }else{
+            $this->setError($result['message']);
+            return false;
+        }
+    }
 
 
 }
