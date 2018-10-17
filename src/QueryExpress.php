@@ -35,7 +35,8 @@ class QueryExpress
         'jd' => '京东物流',
         'annengwuliu' => '安能物流',
         'youshuwuliu' => '优速快递',
-        'quanfengkuaidi' => '全峰快递'
+        'quanfengkuaidi' => '全峰快递',
+        'baishiwuliu' => '百世物流'
     ];
 
 
