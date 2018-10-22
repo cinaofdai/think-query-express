@@ -223,10 +223,15 @@ class QueryExpress
         if($result['status']==200){
            return true;
         }else{
+
+            //韵达快递检查和发过
+            if($type=='yunda'){
+                return true;
+            }
+
             $this->setError($result['message']);
             return false;
         }
     }
-
 
 }
