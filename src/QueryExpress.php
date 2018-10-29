@@ -212,10 +212,17 @@ class QueryExpress
     /**
      * 查询快递单号是否合法
      * @param string $num 快递单
+     * @param bool $check_code 是否只检测快递公司即可
      * @return bool
      */
-    public function checkNum($num){
+    public function checkNum($num,$check_code=false){
         $type = $this->getComCode($num);
+
+        //如果只检测快递公司并且检测出来就过
+        if ($check_code&&$type!=''){
+            return true;
+        }
+
         $request = $this->query_url ."type=$type&postid=$num";
         $result = CurlRequest::get($request);
         $result = json_decode($result, JSON_OBJECT_AS_ARRAY);
